@@ -1,0 +1,30 @@
+class Person {
+  constructor(firstName, lastName, gender, maritalStatus) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.gender = gender;
+    this.maritalStatus = maritalStatus;
+  }
+
+  toLocaleString() {
+    let title = '';
+
+    if (this.gender === 'male') {
+      title = 'Mr.';
+    } else if (this.maritalStatus === 'married') {
+      title = 'Mrs.';
+    } else if (this.maritalStatus === 'single') {
+      title = 'Miss.';
+    }
+
+    return `${title} ${this.lastName}`;
+  }
+}
+const person1 = new Person('Tom', 'Helf', 'male', 'married');
+console.log(person1.toLocaleString());
+
+const person2 = new Person('Maria', 'Davis', 'female', 'single');
+console.log(person2.toLocaleString()); 
+
+const person3 = new Person('Max', 'Lucas', 'male', 'single');
+console.log(person3.toLocaleString());
